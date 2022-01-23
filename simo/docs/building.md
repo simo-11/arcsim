@@ -1,5 +1,7 @@
 # prepare Ubuntu 20.04.3 LTS
 
+Sources from http://graphics.berkeley.edu/resources/ARCSim/
+
 add .gitignore
 snikula@LNOR071265:/github/arcsim$ cp Makefile.linux Makefile
 
