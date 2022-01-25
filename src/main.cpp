@@ -50,7 +50,9 @@ int main (int argc, char **argv) {
         {"resumeoffline", resume_physics},
         {"replay", display_replay},
         {"merge", merge_meshes},
+#ifndef NO_OPENGL      
         {"generate", generate_obj},
+#endif        
         {"split", split_meshes},
         {"test", display_testing},
         {"tri2obj", tri2obj},

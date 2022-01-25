@@ -2,7 +2,7 @@ CC := gcc
 CXX := g++
 
 # # uncomment to disable OpenGL functionality
-# NO_OPENGL := true
+#NO_OPENGL := true
 
 CXXFLAGS := -Idependencies/include -I/opt/local/include
 ifdef NO_OPENGL
@@ -10,7 +10,7 @@ ifdef NO_OPENGL
 endif
 CXXFLAGS_DEBUG := -Wall -g -Wno-sign-compare
 CXXFLAGS_RELEASE := -Wall -O3 -Wreturn-type -fopenmp
-LDFLAGS := -Ldependencies/lib -L/opt/local/lib -lpng -lz -ltaucs -llapack -llapacke -lblas -lboost_filesystem -lboost_system -lboost_thread -ljson -lgomp -lalglib
+LDFLAGS := -Ldependencies/lib -L/opt/local/lib -lpng -lz -ltaucs -llapack -llapacke -lblas -ljsoncpp -lgomp -lalglib
 ifndef NO_OPENGL
 	LDFLAGS := $(LDFLAGS) -lglut -lGLU -lGL
 endif

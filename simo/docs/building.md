@@ -15,9 +15,13 @@ snikula@LNOR071265:/github/arcsim$ rm .DS_Store
 
 ## dependencies
 
-$ sudo apt install scons make g++ libjsoncpp-dev libalglib-dev \
- liblapack-dev libatlas-base-dev gfortran libz-dev libboost-date-time ctags
-
+### for NO_OPENGL build
+$ apt install make g++ libjsoncpp-dev libalglib-dev \
+ liblapack-dev libatlas-base-dev gfortran libz-dev libboost-date-time ctags \
+ libpng-dev
+ 
+### additional for OPENGL build 
+$ apt install freeglut3-dev
 ### fixes / updates
 
 #### jsoncpp 
@@ -93,3 +97,30 @@ snikula@LNOR071265:/github/arcsim/dependencies$         cp taucs/lib/*/libtaucs.
 
 src/sparse.hpp:118:21:   required from here
 /usr/include/c++/9/ostream:691:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+
+### changes for compile errors
+
+$ dpkg -L libjsoncpp-dev
+..
+/usr/include/jsoncpp/json/json.h
+
+### for linking
+
+
+LDFLAGS := -Ldependencies/lib -L/opt/local/lib -lpng -lz -ltaucs -llapack -llapacke -lblas -lboost_filesystem -lboost_system -lboost_thread -ljson -lgomp -lalglib
+from to
+LDFLAGS := -Ldependencies/lib -L/opt/local/lib -lpng -lz -ltaucs -llapack -llapacke -lblas -ljsoncpp -lgomp -lalglib
+
+for
+NO_OPENGL := true
+
+end of display.cpp modified to provide dummy wait_key and Annotation::list
+#else
+std::vector<Annotation> Annotation::list;
+void wait_key () {}
+#endif // NO_OPENGL
+
+main.cpp: added NO_OPENGL guard for generate
+#ifndef NO_OPENGL      
+        {"generate", generate_obj},
+#endif        

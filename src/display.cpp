@@ -838,5 +838,7 @@ void wait_key () {
     };
     Annotation::list.clear();
 }
-
+#else
+std::vector<Annotation> Annotation::list;
+void wait_key () {}
 #endif // NO_OPENGL
