@@ -2,21 +2,21 @@
 Based on code and sample files [sphere-annoted.json](../../sphere-annoted.json) 
 ## Toplevel parsing in [conf.cpp](../../src/conf.cpp)
 Contains storing of configuration part into [Simulation sim](../../src/Simulation.hpp)
- * simulation timing
- * cloths - deforming objects. Naming is propably due to historical reasons. Eachs cloth has defitions fot
- ** [mesh](mesh.md) - initial mesh in ojb format
- ** transform - Initial pose of mesh (optional)
- ** [materials](materials.md) -  material properties for each cloth
- ** remeshing - Remeshing parameters
- * motions - List of motions for handles and/or obstacles (optional)
- * obstacles - List of static or scripted obstacles
- * gravity - Acceleration due to gravity (optional)
- * wind - (optional)
- * friction - Coeff. of cloth-cloth friction (optional)
- * obs_friction - Cloth-obstacle friction (optional)
- * disable - Names of moduless to disable. strainlimiting, plasticity and fracture are disabled if corresponding material properties are not defined
- * [magic](magic.md) - numbers to make the simulation behave
-``
+  * simulation timing
+  * cloths - deforming objects. Naming is probably due to historical reasons. Eachs cloth has defitions for
+    * [mesh](mesh.md) - initial mesh in ojb format
+    * transform - Initial pose of mesh (optional)
+    * [materials](materials.md) -  material properties for each cloth
+    * remeshing - Remeshing parameters
+  * motions - List of motions for handles and/or obstacles (optional)
+  * obstacles - List of static or scripted obstacles
+  * gravity - Acceleration due to gravity (optional)
+  * wind - (optional)
+  * friction - Coeff. of cloth-cloth friction (optional)
+  * obs_friction - Cloth-obstacle friction (optional)
+  * disable - Names of moduless to disable. strainlimiting, plasticity and fracture are disabled if corresponding material properties are not defined
+  * [magic](magic.md) - numbers to make the simulation behave
+```
     if (!json["frame_time"].empty()) {
         parse(sim.frame_time, json["frame_time"]);
         parse(sim.frame_steps, json["frame_steps"], 1);
