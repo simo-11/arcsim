@@ -2,7 +2,9 @@
 Based on code and sample files [sphere-annoted.json](../../sphere-annoted.json) 
 ## Toplevel parsing in [conf.cpp](../../src/conf.cpp)
 Contains storing of configuration part into [Simulation sim](../../src/Simulation.hpp)
-  * simulation timing
+  * simulation timing - see code below for details
+    * frame_time [s] primary way to control how often image is created 
+    * timestep [s] alternative way to control simulation timestep
   * cloths - deforming objects. Naming is probably due to historical reasons. Eachs cloth has defitions for
     * [mesh](mesh.md) - initial mesh in ojb format
     * transform - Initial pose of mesh (optional)
