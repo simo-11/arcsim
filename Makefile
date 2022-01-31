@@ -70,13 +70,13 @@ OBJ := \
 
 .PHONY: all debug release tags clean
 
-release:
+debug:
 
-all: debug release ctags
+all: debug
 
-debug: bin/arcsimd ctags
+debug: bin/arcsimd 
 
-release: bin/arcsim ctags
+release: bin/arcsim 
 
 bin/arcsimd: $(addprefix build/debug/,$(OBJ))
 	$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)

@@ -96,8 +96,8 @@ void load_obj (Mesh &mesh, const string &filename) {
     delete_mesh(mesh);
     fstream file(filename.c_str(), ios::in);
     if(!file) {
-        cout << "Error: failed to open file " << filename << endl;
-        return;
+        cerr << "Error: failed to open mesh file " << filename << endl;
+        exit(1);
     }
     while (file) {
         string line;
@@ -172,6 +172,14 @@ void load_obj (Mesh &mesh, const string &filename) {
         } else if (keyword == "td") {
             linestream >> mesh.faces.back()->damage;
         }
+    }
+    int vs=mesh.verts.size();
+    if(vs<3){
+        cerr << "Error: mesh file " << filename << 
+            " does not produce valid mesh. " <<endl <<
+            "It has "<< vs << " vertexes" << endl;
+        exit(1);
+
     }
     mark_nodes_to_preserve(mesh);
     compute_ms_data(mesh);
@@ -264,15 +272,21 @@ void save_obj (const Mesh &mesh, const string &filename) {
         if (norm2_F(face->Sp_bend)) {
             const Mat3x3 &S = face->Sp_bend;
             file << "tp ";
-            for (int i=0; i<3; i++) for (int j=0; j<3; j++)
-            	file << S(i,j) << " ";
+            for (int i=0; i<3; i++){
+                for (int j=0; j<3; j++){
+            	    file << S(i,j) << " ";
+                }
+            }
            	file << endl;
         }
         if (norm2_F(face->Sp_str)) {
             const Mat3x3 &S = face->Sp_str;
             file << "ts ";
-            for (int i=0; i<3; i++) for (int j=0; j<3; j++)
-            	file << S(i,j) << " ";
+            for (int i=0; i<3; i++){
+                for (int j=0; j<3; j++){
+            	    file << S(i,j) << " ";
+                }
+            }
             file << endl;
         }
         if (face->damage)

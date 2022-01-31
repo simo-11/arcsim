@@ -277,8 +277,9 @@ DeformBVHTree::Construct()
 
 DeformBVHTree::~DeformBVHTree()
 {
-    if (!_root)
+    if (!_root){
         return;
+	}
 	delete _root;
 	delete [] face_buffer;
 }

@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "/github/arcsim/bin/arcsimd",
             // 
-            "args": ["simulate","conf/sphere-break.json"],
+            "args": ["simulate","simo/conf/tension-plasticity.json","simo/results/tension-plasticity"],
             "stopAtEntry": false,
             "cwd": "/github/arcsim",
             "environment": [],

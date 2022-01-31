@@ -101,13 +101,25 @@ int solve_quadratic (double a, double b, double c, double x[2]);
 // Find, replace, and all that jazz
 
 template <typename T> inline int find (const T *x, T* const *xs, int n=3) {
-    for (int i = 0; i < n; i++) if (xs[i] == x) return i; return -1;}
+    for (int i = 0; i < n; i++){
+        if (xs[i] == x) return i;
+    } 
+    return -1;
+}
 
 template <typename T> inline int find (const T &x, const T *xs, int n=3) {
-    for (int i = 0; i < n; i++) if (xs[i] == x) return i; return -1;}
+    for (int i = 0; i < n; i++){
+        if (xs[i] == x) return i;
+    } 
+    return -1;
+}
 
 template <typename T> inline int find (const T &x, const std::vector<T> &xs) {
-    for (int i = 0; i < xs.size(); i++) if (xs[i] == x) return i; return -1;}
+    for (int i = 0; i < xs.size(); i++){
+        if (xs[i] == x) return i;
+    }
+    return -1;
+}
 
 template <typename T> inline bool is_in (const T *x, T* const *xs, int n=3) {
     return find(x, xs, n) != -1;}

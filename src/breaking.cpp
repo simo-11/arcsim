@@ -69,9 +69,9 @@ Edge* split_edge_with_plane(Face* face, Node* node, Vec3& n) {
     const double cut_min_length = node->mesh->parent->remeshing.size_min * 0.05;
     const double min_angle = 5 * M_PI/180;
 
-    if (l < cut_min_length || area(face) < sqr(cut_min_length))
+    if (l < cut_min_length || area(face) < sqr(cut_min_length)){
         return 0;
-	
+	}
 	// if close to existing edge, try to nudge vertex instead
 	if (d < 0.2 && (d*l < min_length || angle0 < min_angle)) {
 		try_move_node(e0->node, edge, d);			
@@ -214,9 +214,9 @@ bool break_node(SplitNode& split, MeshSubset& subset) {
 		if (!next_face_cw(edge, node) || edge == edges[1])
 			start = edge;
 	}
-    if (is_seam_or_boundary(edges[0]) && is_seam_or_boundary(start))
+    if (is_seam_or_boundary(edges[0]) && is_seam_or_boundary(start)){
         return false;
-
+	}
 	Node *end0 = other_node(edges[0], node);
 	Node *end1 = edges[1] ? other_node(edges[1], node) : 0;
            

@@ -1,0 +1,38 @@
+// 1x1 mm cross-section having length of 1 [mm]
+{
+    "frame_time": 0.0167,
+    "end_time": 1,
+    "end_frame": 1,
+    "cloths": [{
+        "reference": "linear",
+        "mesh": "simo/mesh/cube.obj",
+        "transform": {"scale":0.001},
+        "materials": [{
+            // very heavy steel
+            "damping" : 1e-5,
+            "thickness": 6e-3,
+            "density": 2600,
+            "elastic_modulus": 200e9,
+            "poisson_ratio": 0.3, 
+            "bending_mult": 100, 
+            "toughness" : 2.0e7,
+            "fracture_bending_mult": 0.8
+        }],
+        "remeshing": {
+            "refine_angle": 0.2,
+            "refine_compression": 1e-2,
+            "refine_fracture": 0.3,
+            "size": [0.02, 0.1],
+            "aspect_min": 0.3
+        }
+    }],
+    "motions": [],    
+    "obstacles": [{
+        "mesh": "meshes/square.obj",
+        "proxy": "floor",
+        "transform": {"translate": [-4,0,4], "rotate": [-90, 1,0,0], "scale":8}
+    }],
+    "handles": [],
+    "gravity": [0, -9.8, 0],
+    "magic": {}
+}
