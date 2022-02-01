@@ -5,8 +5,10 @@ Contains storing of configuration part into [Simulation sim](../../src/Simulatio
   * simulation timing - see code below for details
     * frame_time [s] primary way to control how often image is created 
     * timestep [s] alternative way to control simulation timestep
+    * end_time [s] defines end time
   * cloths - deforming objects. Naming is probably due to historical reasons. Eachs cloth has defitions for
-    * [mesh](mesh.md) - initial mesh in ojb format
+    * [reference](reference.md) - reference for mesh "linear" or "sphere". Other values will cause error "Reference mesh lookup not implemented here" from referenceshape.cpp as there is no implementation.  
+    * [mesh](mesh.md) - initial mesh in obj format
     * transform - Initial pose of mesh (optional)
     * [materials](materials.md) -  material properties for each cloth
     * remeshing - Remeshing parameters
