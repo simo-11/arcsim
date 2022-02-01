@@ -2,7 +2,6 @@
 {
     "frame_time": 0.0167,
     "end_time": 1,
-    "end_frame": 1,
     "cloths": [{
         "reference": "linear",
         "mesh": "simo/mesh/cube.obj",
