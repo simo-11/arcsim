@@ -87,7 +87,7 @@ explicit Node (const Vec3 &y, const Vec3 &x, const Vec3 &v, int label, int flag,
 
 ## processing of obj lines 
 ### v - vertex
-coordinates are stored asinitial values of Node's plastic embedding and old and current position
+coordinates are stored as initial values of Node's plastic embedding and old and current position
 ```
 Vec3 x;
 linestream >> x[0] >> x[1] >> x[2];
