@@ -8,24 +8,24 @@ Vertices are stored in a counter-clockwise order by default, making explicit dec
 
 ### struct Node
 ```
-	enum NodeFlags { FlagNone = 0, FlagActive = 1, FlagMayBreak = 2, 
-                     FlagResolveUni = 4, FlagResolveMax = 8 };
-    int label;
-    int flag;
-    std::vector<Vert*> verts;
-    Vec3 y; // plastic embedding
-    Vec3 x, x0, v; // position, old (collision-free) position, velocity
-    bool preserve; // don't remove this node
-    // topological data
-    int index; // position in mesh.nodes
-    std::vector<Edge*> adje; // adjacent edges
-    // derived world-space data that changes every frame
-    Vec3 n; // local normal, approximate
-    // derived material-space data that only changes with remeshing
-    double a, m; // area, mass
-    Mat3x3 curvature; // filtered curvature for bending fracture
-    // pop filter data
-    Vec3 acceleration;
+enum NodeFlags { FlagNone = 0, FlagActive = 1, FlagMayBreak = 2, 
+	     FlagResolveUni = 4, FlagResolveMax = 8 };
+int label;
+int flag;
+std::vector<Vert*> verts;
+Vec3 y; // plastic embedding
+Vec3 x, x0, v; // position, old (collision-free) position, velocity
+bool preserve; // don't remove this node
+// topological data
+int index; // position in mesh.nodes
+std::vector<Edge*> adje; // adjacent edges
+// derived world-space data that changes every frame
+Vec3 n; // local normal, approximate
+// derived material-space data that only changes with remeshing
+double a, m; // area, mass
+Mat3x3 curvature; // filtered curvature for bending fracture
+// pop filter data
+Vec3 acceleration;
 explicit Node (const Vec3 &y, const Vec3 &x, const Vec3 &v, int label, int flag, 
     	bool preserve) :
         uuid(uuid_src++), mesh(0), sep(0), label(label), flag(flag), y(y), x(x), x0(x), v(v), preserve(preserve), 
@@ -34,44 +34,44 @@ explicit Node (const Vec3 &y, const Vec3 &x, const Vec3 &v, int label, int flag,
 
 ### struct Vert
 ```
-    Vec3 u; // material space
-    Node *node; // world space
-    // topological data
-    std::vector<Face*> adjf; // adjacent faces
-    int index; // position in mesh.verts
-    // derived material-space data that only changes with remeshing
-    // remeshing data
-    Mat3x3 sizing;
+Vec3 u; // material space
+Node *node; // world space
+// topological data
+std::vector<Face*> adjf; // adjacent faces
+int index; // position in mesh.verts
+// derived material-space data that only changes with remeshing
+// remeshing data
+Mat3x3 sizing;
 ```
 ### struct Edge
 ```
-   Node *n[2]; // nodes
-    int preserve;
-    // topological data
-    Face *adjf[2]; // adjacent faces
-    int index; // position in mesh.edges
-    // plasticity data
-    double theta_ideal, damage; // rest dihedral angle, damage parameter
+Node *n[2]; // nodes
+int preserve;
+// topological data
+Face *adjf[2]; // adjacent faces
+int index; // position in mesh.edges
+// plasticity data
+double theta_ideal, damage; // rest dihedral angle, damage parameter
  ```
 
 ### struct Face
 ```
-    Vert* v[3]; // verts
-    Material* material;
-    int flag;
-    // topological data
-    Edge *adje[3]; // adjacent edges
-    int index; // position in mesh.faces
-    // derived world-space data that changes every frame
-    Vec3 n; // local normal, exact
-    // derived material-space data that only changes with remeshing
-    double a, m; // area, mass
-    Mat3x3 Dm, invDm; // finite element matrix
-    // plasticity data
-    Mat3x3 Sp_bend; // plastic bending strain
-    Mat3x3 Sp_str; // plastic stretching
-    Mat3x3 sigma;
-    double damage; // accumulated norm of S_plastic/S_yield
+Vert* v[3]; // verts
+Material* material;
+int flag;
+// topological data
+Edge *adje[3]; // adjacent edges
+int index; // position in mesh.faces
+// derived world-space data that changes every frame
+Vec3 n; // local normal, exact
+// derived material-space data that only changes with remeshing
+double a, m; // area, mass
+Mat3x3 Dm, invDm; // finite element matrix
+// plasticity data
+Mat3x3 Sp_bend; // plastic bending strain
+Mat3x3 Sp_str; // plastic stretching
+Mat3x3 sigma;
+double damage; // accumulated norm of S_plastic/S_yield
 ```
 
 ### struct Mesh
