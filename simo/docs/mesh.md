@@ -76,13 +76,13 @@ double damage; // accumulated norm of S_plastic/S_yield
 
 ### struct Mesh
 ```
-	ReferenceShape *ref;
-	Cloth* parent;
-  CollisionProxy* proxy;
-  std::vector<Vert*> verts;
-  std::vector<Node*> nodes;
-  std::vector<Edge*> edges;
-  std::vector<Face*> faces;
+ReferenceShape *ref;
+Cloth* parent;
+CollisionProxy* proxy;
+std::vector<Vert*> verts;
+std::vector<Node*> nodes;
+std::vector<Edge*> edges;
+std::vector<Face*> faces;
 ```
 
 ## processing of obj lines 
@@ -107,29 +107,29 @@ void Mesh::add (Node *node) {
 ### f - face
 Adds Verts and Faces to mesh
 ```
-            vector<Vert*> verts;
-            vector<Node*> nodes;
-            string w;
-            while (linestream >> w) {
-                stringstream wstream(w);
-                int v, n;
-                char c;
-                wstream >> n >> c >> v;
-                nodes.push_back(mesh.nodes[n-1]);
-                if (wstream) {
-                    verts.push_back(mesh.verts[v-1]);
-                } else if (!nodes.back()->verts.empty()) {
-                    verts.push_back(nodes.back()->verts[0]);
-                } else {
-                	  verts.push_back(new Vert(nodes.back()->x));
-                    mesh.add(verts.back());
-                }
-            }
-            for (int v = 0; v < (int)verts.size(); v++)
-                connect(verts[v], nodes[v]);
-            vector<Face*> faces = triangulate(verts);
-            for (int f = 0; f < (int)faces.size(); f++)
-                mesh.add(faces[f]);
+    vector<Vert*> verts;
+    vector<Node*> nodes;
+    string w;
+    while (linestream >> w) {
+	stringstream wstream(w);
+	int v, n;
+	char c;
+	wstream >> n >> c >> v;
+	nodes.push_back(mesh.nodes[n-1]);
+	if (wstream) {
+	    verts.push_back(mesh.verts[v-1]);
+	} else if (!nodes.back()->verts.empty()) {
+	    verts.push_back(nodes.back()->verts[0]);
+	} else {
+		  verts.push_back(new Vert(nodes.back()->x));
+	    mesh.add(verts.back());
+	}
+    }
+    for (int v = 0; v < (int)verts.size(); v++)
+	connect(verts[v], nodes[v]);
+    vector<Face*> faces = triangulate(verts);
+    for (int f = 0; f < (int)faces.size(); f++)
+	mesh.add(faces[f]);
 ..
 void Mesh::add (Vert *vert) {
     verts.push_back(vert);
