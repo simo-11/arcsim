@@ -1,16 +1,15 @@
-// 1x1 mm cross-section having length of 1 [mm]
+// 1x1 m cross-section having length of 1 [m]
 {
     "frame_time": 0.0167,
     "end_time": 1,
     "cloths": [{
         "reference": "linear",
         "mesh": "simo/mesh/cube.obj",
-        "transform": {"scale":0.001},
         "materials": [{
-            // very heavy steel
+            // steel
             "damping" : 1e-5,
             "thickness": 6e-3,
-            "density": 2600,
+            "density": 7800,
             "elastic_modulus": 200e9,
             "poisson_ratio": 0.3, 
             "bending_mult": 100, 
