@@ -648,8 +648,8 @@ void select_element(int x, int y, int button) {
     gluUnProject(x, viewport[3]-y, 1, modelview, project, viewport, &p1[0], &p1[1], &p1[2]);
     Face *face = 0; Vert *vert = 0;
     double maxZ = 1e100;
-    double minD = 0.03;
-    
+    double minD = 0.1/pane->scale; // was fixed 0.03
+
     for (size_t c=0; c<sim.cloth_meshes.size(); c++) {
     	Mesh& mesh = *sim.cloth_meshes[c];
 	    if (button == GLUT_LEFT_BUTTON) {
