@@ -2,11 +2,11 @@
 
 ## main actions documented in [README](../..README) section  Using the OpenGL interface
 
-Space:          start simulation/playback
-Left drag:      rotate
-Middle drag:    translate
-Scroll wheel:   scale
-Esc:            exit
+ * Space:          start simulation/playback
+ * Left drag:      rotate
+ * Middle drag:    translate
+ * Scroll wheel:   scale
+ * Esc:            exit
 
 ## keyboard actions in [displayphysics.cpp:keyboard](../../src/displayphysics.cpp) 
   * s - single step simulation 
