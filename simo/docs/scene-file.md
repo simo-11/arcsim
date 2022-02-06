@@ -1,5 +1,5 @@
 # scene-file documentation
-Based on code and sample files [sphere-annoted.json](../../conf/sphere-annoted.json) 
+Based on code and sample files [sphere-annotated.json](../../conf/sphere-annotated.json) 
 ## Toplevel parsing in parse method in [conf.cpp](../../src/conf.cpp)
 Contains storing of configuration part into [Simulation sim](../../src/Simulation.hpp)
   * simulation timing - see code below for details
