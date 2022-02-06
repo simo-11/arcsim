@@ -16,7 +16,7 @@ Esc:            exit
   * x - zooms out 
   * n - sets stepDebug to false 
     * causes simulation to continue after debug interactions
-  * <TAB> - switch display mode which is shown in window title after debug: 
+  * TAB - switch display mode which is shown in window title after debug: 
     * sigma
     * sigma_bend
     * sep strength
