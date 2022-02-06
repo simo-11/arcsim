@@ -1,5 +1,5 @@
 # scene-file documentation
-Based on code and sample files [sphere-annoted.json](../../sphere-annoted.json) 
+Based on code and sample files [sphere-annoted.json](../../conf/sphere-annoted.json) 
 ## Toplevel parsing in parse method in [conf.cpp](../../src/conf.cpp)
 Contains storing of configuration part into [Simulation sim](../../src/Simulation.hpp)
   * simulation timing - see code below for details
@@ -9,7 +9,10 @@ Contains storing of configuration part into [Simulation sim](../../src/Simulatio
   * cloths - deforming objects. Naming is probably due to historical reasons. Eachs cloth has defitions for
     * [reference](reference.md) - reference for mesh "linear" or "sphere". Other values will cause error "Reference mesh lookup not implemented here" from referenceshape.cpp as there is no implementation.  
     * [mesh](mesh.md) - initial mesh in obj format
-    * transform - Initial pose of mesh (optional)
+    * transform - Initial pose of mesh (optional), object contains optional entries
+      * "translate": [x,y,z]
+      * "rotate": [angle,axis_x,axis_y,axis_z]
+      * "scale": scale
     * [materials](materials.md) -  material properties for each cloth
     * remeshing - Remeshing parameters
   * motions - List of motions for handles and/or obstacles (optional)
