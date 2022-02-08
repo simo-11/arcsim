@@ -56,9 +56,10 @@ map<Node*, Plane> nearest_obstacle_planes (const vector<Node*>& nodes,
     for (size_t n = 0; n < nodes.size(); n++) {
         Vec3 x = nodes[n]->x;
         Vec3 p = nearest_point(x, obs_accs, dmin);
-        if (p != x)
+        if (p != x){
             planes[n].x0 = p;
             planes[n].n = normalize(x - p);
+        }
     }
     map<Node*, Plane> plane_map;
     for (size_t i=0; i<planes.size(); i++)
