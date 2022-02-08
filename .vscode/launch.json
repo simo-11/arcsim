@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "gdb simulate cube-gravity",
             "type": "cppdbg",
             "request": "launch",
             "program": "/github/arcsim/bin/arcsimd",
             // 
-            "args": ["simulate","simo/conf/tension-plasticity.json","simo/results/tension-plasticity"],
+            "args": ["simulate","simo/conf/cube-gravity.json","simo/results/cube-gravity"],
             "stopAtEntry": false,
             "cwd": "/github/arcsim",
             "environment": [],

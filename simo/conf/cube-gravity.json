@@ -3,10 +3,7 @@
     "end_time": 1,
     "cloths": [{
         "reference": "linear",
-        "mesh": "simo/mesh/plate.obj",
-        "transform":{
-            "scale":100
-        },
+        "mesh": "simo/mesh/cube.obj",
         "materials": [{
             "damping" : 1e-5,
             "thickness": 6e-2,
@@ -21,8 +18,8 @@
             "refine_angle": 0.2,
             "refine_compression": 1e-2,
             "refine_fracture": 0.3,
-            "size": [0.02, 0.1],
-            "aspect_min": 0.3
+            "size": [0.1, 1],
+            "aspect_min": 0.2
         }
     }],
     "motions": [],    
