@@ -1,9 +1,13 @@
 {
     "frame_time": 0.0167,
-    "end_time": 1,
+    "end_time": 0.5,
     "cloths": [{
         "reference": "linear",
         "mesh": "simo/mesh/plate.obj",
+        "transform":{
+            "translate":[0,0,-0],
+            "rotate":[90,1,0,0]
+        },
         "materials": [{
             "damping" : 1e-5,
             "thickness": 6e-2,
@@ -13,18 +17,19 @@
             "bending_mult": 100, 
             "toughness" : 2.0e7,
             "fracture_bending_mult": 0.8
-        }],
-        "remeshing": {
-            "refine_angle": 0.2,
-            "refine_compression": 1e-2,
-            "refine_fracture": 0.3,
-            "size": [0.02, 0.1],
-            "aspect_min": 0.3
-        }
+        }]
     }],
     "motions": [],    
-    "obstacles": [],
+    "obstacles": [{
+        "mesh": "simo/mesh/plate.obj",
+        "transform":{
+            "scale":2,
+            "translate":[-0.5,-1,-1],
+            "rotate":[90,1,0,0]
+        } 
+    }],
     "handles": [],
     "gravity": [0, -9.8, 0],
+    "disable":["remeshing"],
     "magic": {}
 }

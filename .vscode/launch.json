@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "gdb simulate plate-gravity",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/github/arcsim/bin/arcsimd",
+            // 
+            "args": ["simulate","simo/conf/plate-gravity.json"],
+            "stopAtEntry": false,
+            "cwd": "/github/arcsim",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "gdb simulate cube-gravity",
             "type": "cppdbg",
             "request": "launch",
