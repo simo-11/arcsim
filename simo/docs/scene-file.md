@@ -16,6 +16,18 @@ Contains storing of configuration part into [Simulation sim](../../src/Simulatio
     * [materials](materials.md) -  material properties for each cloth
     * remeshing - Remeshing parameters
   * motions - List of motions for handles and/or obstacles (optional)
+  * handles - List of handles to predescribe motion for specific items
+    * node (default) [parse_node_handle in conf.cpp](../../src/conf.cpp)
+      * cloth - default 0
+      * label - mesh nodes having same label are selected
+      * nodes - mesh nodes are selected using mesh indexes 
+    * circle [parse_circe_handle in conf.cpp](../../src/conf.cpp)
+    * glue [parse_glue_handle in conf.cpp](../../src/conf.cpp)
+    * soft  [parse_soft_handle in conf.cpp](../../src/conf.cpp)
+    * motion <index> - Optional: Index of motion to attach to, hf omitted, handle does not move
+    * start_time <time> - Optional, default 0: When handle activates
+    * end_time <time> - Optional, default infinity: When handle deactivates
+    * fade_time <time>
   * obstacles - List of static or scripted obstacles
   * gravity - Acceleration due to gravity (optional)
   * wind - (optional)
