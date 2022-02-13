@@ -22,7 +22,9 @@
     "motions": [],    
     "obstacles": [],
     "handles": [{
-        "nodes":[0,3]
+        "type": "soft",
+        "center":[0,0,0],
+        "radius":0.1
     }],
     "gravity": [0, -9.8, 0],
     "disable":["remeshing"],
