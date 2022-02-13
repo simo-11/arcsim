@@ -17,14 +17,17 @@ Contains storing of configuration part into [Simulation sim](../../src/Simulatio
     * remeshing - Remeshing parameters
   * motions - List of motions for handles and/or obstacles (optional)
   * handles - List of handles to predescribe motion for specific items
-    * node (default) [parse_node_handle in conf.cpp](../../src/conf.cpp)
+    * node (default) [parse_node_handle in conf.cpp](../../src/conf.cpp), add_forces implementation is currently void
       * cloth - default 0
       * label - mesh nodes having same label are selected
       * nodes - mesh nodes are selected using mesh indexes 
-    * circle [parse_circe_handle in conf.cpp](../../src/conf.cpp)
-    * glue [parse_glue_handle in conf.cpp](../../src/conf.cpp)
-    * soft  [parse_soft_handle in conf.cpp](../../src/conf.cpp)
-    * motion <index> - Optional: Index of motion to attach to, hf omitted, handle does not move
+    * circle [parse_circe_handle in conf.cpp](../../src/conf.cpp), add_forces implementation is void
+    * glue [parse_glue_handle in conf.cpp](../../src/conf.cpp), add_forces implementation is void
+    * soft  [parse_soft_handle in conf.cpp](../../src/conf.cpp) add_forces implementation is in [SoftHandle::add_forces in handle.cpp](../../src/handle.cpp). Implementation does not work limit translation
+      * cloth - default 0
+      * center - [x,y,z]
+      * radius - double
+    * motion <index> - Optional: Index of motion to attach to, if omitted, handle does not move
     * start_time <time> - Optional, default 0: When handle activates
     * end_time <time> - Optional, default infinity: When handle deactivates
     * fade_time <time>
