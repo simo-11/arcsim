@@ -13,10 +13,10 @@ f 1 4 3 2
 ```
 [beam](../mesh/beam.obj) has non-zero x-coordinates of 10 and non-zero y-coordinates of 0.1
 
-# [Elastic deformation](../conf/elastic.json)
- * plate-100 is used to model geometry
+# [Elastic Beam](../conf/elastic-beam.json)
+ * beam is used to model geometry
  * handles are used to fix vertices at x=0
- * thickness is set to 1
+ * thickness is set to 0.1
  * According to beam theory which applies well for these measures tip displacement is 0.546 [m]
 
 
