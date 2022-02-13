@@ -1,0 +1,30 @@
+{
+    "frame_time": 0.0167,
+    "end_time": 0.5,
+    "cloths": [{
+        "reference": "linear",
+        "mesh": "simo/mesh/beam.obj",
+        "transform":{
+            "translate":[0,0,-0],
+            "rotate":[90,1,0,0]
+        },
+        "materials": [{
+            "damping" : 1e-5,
+            "thickness": 0.1,
+            "density": 7800,
+            "elastic_modulus": 200e9,
+            "poisson_ratio": 0.3, 
+            "bending_mult": 100, 
+            "toughness" : 2.0e7,
+            "fracture_bending_mult": 0.8
+        }]
+    }],
+    "motions": [],    
+    "obstacles": [],
+    "handles": [{
+        "nodes":[0,3]
+    }],
+    "gravity": [0, -9.8, 0],
+    "disable":["remeshing"],
+    "magic": {}
+}
