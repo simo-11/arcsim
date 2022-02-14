@@ -1,11 +1,11 @@
 {
     "frame_time": 0.0167,
-    "end_time": 0.5,
+    "end_time": 1.0,
     "cloths": [{
         "reference": "linear",
         "mesh": "simo/mesh/beam.obj",
         "transform":{
-            "translate":[0,0,-0],
+            "translate":[0,0,0],
             "rotate":[90,1,0,0]
         },
         "materials": [{
@@ -20,12 +20,22 @@
         }]
     }],
     "motions": [],    
-    "obstacles": [],
-    "handles": [{
-        "type": "soft",
-        "center":[0,0,0],
-        "radius":0.1
+    "obstacles": [{
+        "mesh": "simo/mesh/plate.obj",
+        "transform":{
+            "scale":1,
+            "translate":[0,-0.001,-0.45],
+            "rotate":[90,1,0,0]
+        } 
+    },{
+        "mesh": "simo/mesh/plate.obj",
+        "transform":{
+            "scale":1,
+            "translate":[0,0.001,-0.45],
+            "rotate":[90,1,0,0]
+        } 
     }],
+    "handles": [],
     "gravity": [0, -9.8, 0],
     "disable":["remeshing"],
     "magic": {}
