@@ -9,14 +9,8 @@
             "rotate":[90,1,0,0]
         },
         "materials": [{
-            "damping" : 1e-5,
-            "thickness": 0.1,
-            "density": 7800,
-            "elastic_modulus": 200e9,
-            "poisson_ratio": 0.3, 
-            "bending_mult": 100, 
-            "toughness" : 2.0e7,
-            "fracture_bending_mult": 0.8
+            "data":"simo/material/100mm-steel.json",
+            "damping" : 1e-5
         }]
     }],
     "motions": [],    
