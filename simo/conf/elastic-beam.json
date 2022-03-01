@@ -9,7 +9,7 @@
             "rotate":[90,1,0,0]
         },
         "materials": [{
-            "data":"simo/material/100mm-steel.json",
+            "data":"simo/material/100-0-mm-steel.json",
             "damping" : 1e-5
         }],
         "remeshing":{
