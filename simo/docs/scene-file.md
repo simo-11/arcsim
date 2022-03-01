@@ -14,7 +14,7 @@ Contains storing of configuration part into [Simulation sim](../../src/Simulatio
       * "rotate": [angle,axis_x,axis_y,axis_z]
       * "scale": scale
     * [materials](materials.md) -  material properties for each cloth
-    * remeshing - Remeshing parameters
+    * remeshing - Remeshing parameters, define at least "size":[_min_,_max_] even remeshing is disabled as remeshing is also done during model initialization while computing initial material space data. 
   * motions - List of motions for handles and/or obstacles (optional)
   * handles - List of handles to predescribe motion for specific items
     * node (default) [parse_node_handle in conf.cpp](../../src/conf.cpp), add_forces implementation is currently void
