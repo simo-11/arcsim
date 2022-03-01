@@ -11,7 +11,10 @@
         "materials": [{
             "data":"simo/material/100mm-steel.json",
             "damping" : 1e-5
-        }]
+        }],
+        "remeshing":{
+            "size":[0.001,10]
+        }
     }],
     "motions": [],    
     "obstacles": [{
