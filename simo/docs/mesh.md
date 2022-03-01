@@ -152,6 +152,9 @@ void Mesh::add (Face *face) {
         e->adjf[side] = face;
     }
 }
-
 ```
-
+## clamping
+remeshing.size should be defined to avoid clampings to zero
+```
+clamping 10.0005 to -0
+```
