@@ -23,6 +23,7 @@ enum {Proximity, Physics, StrainLimiting, Collision, Remeshing, Separation,
           PopFilter, Plasticity, Fracture, nModules};
 ```
 ## Sample output from sphere-break.json
+Run stops at Sim frame 248 time 0.012 at time of collision
 ```
 4.31331 5.96738 0 2.54031 16.1944 0.363076 14.6288 0 0
 4.3319 6.05657 0 2.25023 3.54577 0.326712 13.7956 0 0
