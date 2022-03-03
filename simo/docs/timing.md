@@ -23,7 +23,6 @@ enum {Proximity, Physics, StrainLimiting, Collision, Remeshing, Separation,
           PopFilter, Plasticity, Fracture, nModules};
 ```
 ## Sample output from sphere-break.json
-Run stops at Sim frame 248 time 0.012 at time of collision
 ```
 4.31331 5.96738 0 2.54031 16.1944 0.363076 14.6288 0 0
 4.3319 6.05657 0 2.25023 3.54577 0.326712 13.7956 0 0
@@ -35,3 +34,11 @@ Run stops at Sim frame 248 time 0.012 at time of collision
 |4.31331 | 5.96738 | 0 | 2.54031 | 16.1944 | 0.363076 | 14.6288 | 0 | 0 |
 |4.3319 | 6.05657 | 0 | 2.25023 | 3.54577 | 0.326712 | 13.7956 | 0 | 0 |
 |4.29006 | 5.98368 | 0 | 2.24725 | 3.51193 | 0.336261 | 13.7219 | 0 | 0 |
+
+Run stalls at Sim frame 248 time 0.012 at time of collision
+```
+Sim frame 249 [249]
+Collision resolution failed to converge!
+```
+![image](https://user-images.githubusercontent.com/1210784/156644315-41ebbb34-a306-45b3-a4ed-57f50dc6a7a7.png)
+
