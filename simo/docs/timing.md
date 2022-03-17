@@ -35,7 +35,12 @@ enum {Proximity, Physics, StrainLimiting, Collision, Remeshing, Separation,
 |4.3319 | 6.05657 | 0 | 2.25023 | 3.54577 | 0.326712 | 13.7956 | 0 | 0 |
 |4.29006 | 5.98368 | 0 | 2.24725 | 3.51193 | 0.336261 | 13.7219 | 0 | 0 |
 
+```
+/github/arcsim$ bin/arcsimd simulate conf/sphere-break.json results/sphere-break
+```
 Run stalls at Sim frame 248 time 0.012 at time of collision
+Before starting simulation
+![image](https://user-images.githubusercontent.com/1210784/158882392-030e103b-cd4b-4a59-8424-99f63cfe8412.png)
 ```
 Sim frame 249 [249]
 Collision resolution failed to converge!
